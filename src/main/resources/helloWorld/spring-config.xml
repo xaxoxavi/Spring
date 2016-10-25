@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+
+    <bean id="helloBean" class="helloWorld.HelloWorld" scope="singleton">
+        <property name="name" value="Pep" />
+        <property name="cognom" value="Torrens"/>
+        <property name="log" ref="logConsole1" />
+    </bean>
+
+
+
+    <bean id="logConsole" class="log.LogConsole">
+        <property name="logInfo" value="true"/>
+        <property name="logError" value="false"/>
+        <property name="logWarn" value="true"/>
+    </bean>
+
+    <bean id="logConsole1" class="log.LogConsole">
+        <property name="logInfo" value="false"/>
+        <property name="logError" value="true"/>
+        <property name="logWarn" value="true"/>
+    </bean>
+</beans>
